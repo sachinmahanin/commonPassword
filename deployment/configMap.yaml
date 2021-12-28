@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: commonpassword-configmap
+data:
+  PASSWORD_URL: "https://pwlist.cfapps.eu10.hana.ondemand.com/passwords.txt"
+  PASSWORD_PATH: "./download/PasswordList.txt"

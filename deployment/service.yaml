@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: commonpasswordservice
+spec:
+  selector:
+    app: commonpasswordservice
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 18607
+      targetPort: 18607
+      nodePort: 30003
