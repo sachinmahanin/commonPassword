@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	logger "github.com/sachinmahanin/commonPassword/middleware/logger"
-	"github.com/sachinmahanin/commonPassword/sessionutil"
-	web "github.com/sachinmahanin/commonPassword/web"
+	logger "github.com/sachinmahanin/commonpassword/middleware/logger"
+	"github.com/sachinmahanin/commonpassword/sessionutil"
+	web "github.com/sachinmahanin/commonpassword/web"
 	"github.com/stretchr/testify/assert"
 	webserver "github.com/zhongjie-cai/web-server"
 )

@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sachinmahanin/commonPassword/config"
+	"github.com/sachinmahanin/commonpassword/config"
 	"github.com/stretchr/testify/assert"
 	webserver "github.com/zhongjie-cai/web-server"
 )

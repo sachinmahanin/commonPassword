@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/sachinmahanin/commonPassword/config"
-	customization "github.com/sachinmahanin/commonPassword/customization"
+	"github.com/sachinmahanin/commonpassword/config"
+	customization "github.com/sachinmahanin/commonpassword/customization"
 )
 
 // This is a sample of how to setup application for running the server

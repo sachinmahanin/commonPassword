@@ -17,12 +17,16 @@ func TestSetupApplication_NoErrors(t *testing.T) {
 	var dummyDefaultAllowedLogLevel = webserver.LogLevel(rand.Int())
 	var dummyDefaultAllowedLogTypeContent = "dummyDefaultAllowedLogType"
 	var dummyDefaultAllowedLogLevelContent = "dummyDefaultAllowedLogLevel"
+	var dummyCommonPasswordListURL = "dummyCommonPasswordListURL"
+	var dummyPassswordFilePath = "dummyPassswordFilePath"
 	var osGetEnvParameters = []string{
 		"HOSTNAME",
 		"APP_VERSION",
 		"APP_PORT",
 		"ALLOWED_LOG_LEVEL",
 		"ALLOWED_LOG_TYPE",
+		"PASSWORD_URL",
+		"PASSWORD_PATH",
 	}
 	var osGetEnvReturns = []string{
 		dummyHostName,
@@ -30,19 +34,20 @@ func TestSetupApplication_NoErrors(t *testing.T) {
 		dummyAppPort,
 		dummyDefaultAllowedLogLevelContent,
 		dummyDefaultAllowedLogTypeContent,
+		dummyCommonPasswordListURL,
+		dummyPassswordFilePath,
 	}
 
 	// mock
 	createMock(t)
 
 	// expect
-	osGetenvExpected = 5
+	osGetenvExpected = 7
 	osGetenv = func(key string) string {
 		osGetenvCalled++
 		if osGetenvCalled > osGetenvExpected {
 			return ""
 		}
-
 		assert.Equal(t, osGetEnvParameters[osGetenvCalled-1], key)
 		return osGetEnvReturns[osGetenvCalled-1]
 	}
@@ -69,6 +74,8 @@ func TestSetupApplication_NoErrors(t *testing.T) {
 	assert.Equal(t, dummyAppPort, osGetEnvReturns[2])
 	assert.Equal(t, dummyDefaultAllowedLogLevelContent, osGetEnvReturns[3])
 	assert.Equal(t, dummyDefaultAllowedLogTypeContent, osGetEnvReturns[4])
+	assert.Equal(t, dummyCommonPasswordListURL, osGetEnvReturns[5])
+	assert.Equal(t, dummyPassswordFilePath, osGetEnvReturns[6])
 
 	// verify
 	verifyAll(t)

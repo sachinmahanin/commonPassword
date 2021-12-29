@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/sachinmahanin/commonPassword/config"
+	"github.com/sachinmahanin/commonpassword/config"
 	"github.com/stretchr/testify/assert"
 )
 

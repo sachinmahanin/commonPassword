@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/sachinmahanin/commonPassword/config"
+	"github.com/sachinmahanin/commonpassword/config"
 	webserver "github.com/zhongjie-cai/web-server"
 )
 

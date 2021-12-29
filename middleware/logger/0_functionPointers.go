@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/sachinmahanin/commonPassword/timeutil"
+	"github.com/sachinmahanin/commonpassword/timeutil"
 )
 
 // func pointers for injection / testing: logger.go

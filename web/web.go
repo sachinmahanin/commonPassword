@@ -3,8 +3,8 @@ package web
 import (
 	"net/http"
 
-	"github.com/sachinmahanin/commonPassword/handler/business"
-	"github.com/sachinmahanin/commonPassword/handler/utility"
+	"github.com/sachinmahanin/commonpassword/handler/business"
+	"github.com/sachinmahanin/commonpassword/handler/utility"
 	webserver "github.com/zhongjie-cai/web-server"
 )
 

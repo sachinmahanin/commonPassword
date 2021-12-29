@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/sachinmahanin/commonPassword/handler/business"
-	"github.com/sachinmahanin/commonPassword/handler/utility"
+	"github.com/sachinmahanin/commonpassword/handler/business"
+	"github.com/sachinmahanin/commonpassword/handler/utility"
 	"github.com/stretchr/testify/assert"
 	webserver "github.com/zhongjie-cai/web-server"
 )

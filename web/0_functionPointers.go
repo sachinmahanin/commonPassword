@@ -1,6 +1,6 @@
 package web
 
-import "github.com/sachinmahanin/commonPassword/handler/miscellaneous"
+import "github.com/sachinmahanin/commonpassword/handler/miscellaneous"
 
 // func pointers for injection / testing: web.go
 var (

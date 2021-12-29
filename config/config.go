@@ -43,7 +43,6 @@ func SetupApplication() error {
 	AppPort = osGetenv("APP_PORT")
 	AllowedLogLevel = webserverNewLogLevel(osGetenv("ALLOWED_LOG_LEVEL"))
 	AllowedLogType = webserverNewLogType(osGetenv("ALLOWED_LOG_TYPE"))
-	AllowedLogType = webserverNewLogType(osGetenv("ALLOWED_LOG_TYPE"))
 	CommonPasswordListURL = osGetenv("PASSWORD_URL")
 	PassswordFilePath = osGetenv("PASSWORD_PATH")
 	return nil

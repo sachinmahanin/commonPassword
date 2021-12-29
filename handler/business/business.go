@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sachinmahanin/commonPassword/config"
-	"github.com/sachinmahanin/commonPassword/handler/business/model"
+	"github.com/sachinmahanin/commonpassword/config"
+	"github.com/sachinmahanin/commonpassword/handler/business/model"
 
 	webserver "github.com/zhongjie-cai/web-server"
 )
