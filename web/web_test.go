@@ -75,7 +75,7 @@ func TestRegisteredBusinessRoutes(t *testing.T) {
 	assert.Equal(t, "business.SearchPassword", result[0].Endpoint)
 	assert.Equal(t, http.MethodPost, result[0].Method)
 	assert.Equal(t, "/CommonPassword", result[0].Path)
-	assert.Equal(t, business.SearchPassword, result[0].ActionFunc)
+	funcEquals(t, business.SearchPassword, result[0].ActionFunc)
 	assert.Empty(t, result[0].Parameters)
 	assert.Empty(t, result[0].Queries)
 

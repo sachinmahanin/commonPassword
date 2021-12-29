@@ -55,6 +55,12 @@ func TestMain_HappyPath(t *testing.T) {
 		return
 	}
 
+	DownloadFileFuncExpected = 1
+	DownloadFileFunc = func(filepath string, url string) error {
+		DownloadFileFuncCalled++
+		return nil
+	}
+
 	// SUT + act
 	main()
 
@@ -64,6 +70,57 @@ func TestMain_HappyPath(t *testing.T) {
 	verifyAll(t)
 }
 
+func TestMain_DownloadFileFailed(t *testing.T) {
+	// arrange
+
+	var dummyPort = 80
+	var dummyError = errors.New("app download error")
+	var dummyFmtError = errors.New("some error")
+	// mock
+	createMock(t)
+
+	// expect
+	configSetupApplicationExpected = 1
+	configSetupApplication = func() error {
+		configSetupApplicationCalled++
+		return nil
+	}
+
+	DownloadFileFuncExpected = 1
+	DownloadFileFunc = func(filepath string, url string) error {
+		DownloadFileFuncCalled++
+		return dummyError
+	}
+	strconvAtoiExpected = 1
+	strconvAtoi = func(s string) (int, error) {
+		strconvAtoiCalled++
+		assert.Equal(t, config.AppPort, s)
+		return dummyPort, nil
+	}
+
+	fmtErrorfExpected = 1
+	fmtErrorf = func(format string, a ...interface{}) error {
+		assert.Equal(t, "Not able to download the file from url: %v", format)
+		assert.Equal(t, 1, len(a))
+		assert.Equal(t, config.CommonPasswordListURL, a[0])
+		fmtErrorfCalled++
+		return dummyFmtError
+	}
+
+	panicExpected = 1
+	defer func() {
+		panicCalled++
+
+		// verify
+		verifyAll(t)
+		recover()
+	}()
+	// SUT + act
+	main()
+
+	// assert
+
+}
 func TestMain_configSetupApplicationFail(t *testing.T) {
 	// arrange
 	var dummyError = errors.New("app setup error")

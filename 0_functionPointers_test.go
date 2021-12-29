@@ -25,12 +25,22 @@ var (
 	applicationStartCalled          int
 	panicExpected                   int
 	panicCalled                     int
+	DownloadFileFuncCalled          int
+	DownloadFileFuncExpected        int
 )
 
 func createMock(t *testing.T) {
 
 	configSetupApplicationExpected = 0
 	configSetupApplicationCalled = 0
+
+	DownloadFileFuncCalled = 0
+	DownloadFileFuncExpected = 0
+	DownloadFileFunc = func(filepath string, url string) error {
+		DownloadFileFuncCalled++
+		return nil
+	}
+
 	panicExpected = 0
 	panicCalled = 0
 	configSetupApplication = func() error {
@@ -75,6 +85,10 @@ func verifyAll(t *testing.T) {
 	assert.Equal(t, fmtErrorfExpected, fmtErrorfCalled, "Unexpected number of calls to method fmtErrorf")
 	webserverNewApplication = webserver.NewApplication
 	assert.Equal(t, webserverNewApplicationExpected, webserverNewApplicationCalled, "Unexpected number of calls to method webserverNewApplication")
+
+	DownloadFileFunc = DownloadFile
+	assert.Equal(t, DownloadFileFuncExpected, DownloadFileFuncCalled, "Unexpected number of calls to method DownloadFileFunc")
+
 	assert.Equal(t, applicationStartExpected, applicationStartCalled, "Unexpected number of calls to method applicationStart")
 	assert.Equal(t, applicationStopExpected, applicationStopCalled, "Unexpected number of calls to method applicationStop")
 	assert.Equal(t, panicExpected, panicCalled, "Unexpected number of calls to method panic")

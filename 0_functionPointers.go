@@ -14,4 +14,5 @@ var (
 	configSetupApplication  = config.SetupApplication
 	strconvAtoi             = strconv.Atoi
 	webserverNewApplication = webserver.NewApplication
+	DownloadFileFunc        = DownloadFile
 )

@@ -27,7 +27,7 @@ func main() {
 		)
 	}
 	//Download file
-	err := DownloadFile(config.PassswordFilePath, config.CommonPasswordListURL)
+	err := DownloadFileFunc(config.PassswordFilePath, config.CommonPasswordListURL)
 	if err != nil {
 		panic(
 			fmtErrorf(

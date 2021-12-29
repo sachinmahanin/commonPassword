@@ -1,4 +1,4 @@
-module github.com/sachinmahanin/commonPassword
+module github.com/sachinmahanin/commonpassword
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
