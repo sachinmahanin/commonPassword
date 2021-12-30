@@ -80,7 +80,7 @@ As soon as commit is pushed to the master branch, CI workflow is triggered is tr
 1. Build
 2. Running Test cases with code coverage
 3. Building docker image
-4. push the image to the docker hub account https://hub.docker.com/r/sachinmahanin/passwordstrength
+4. push the image to the docker hub account https://hub.docker.com/r/sachinmahanin/commonpassword
 
 ## Running the service in minikube
 1. Run the minikube service on your local box - minkube start
